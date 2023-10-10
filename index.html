@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+</head>
+<body>
+<script>
+function answer(){
+    let Q = document.getElementById("Q");
+    let A = Number(Q.q1.value) + Number(Q.q2.value);
+    let B = Number(Q.q3.value) + Number(Q.q4.value);
+
+    if (A > 0 && B > 0){
+        text = "あなたはお節介グループです";
+    } else if (A > 0 && B <= 0){
+        text = "あなたは表現者グループです。";
+    } else if (A <= 0 && B > 0){
+        text = "あなたは優等生グループです";
+    } else if (A <= 0 && B <= 0){
+        text = "あなたは合理経済人グループです。";
+    }
+
+    document.getElementById("kotae").innerHTML = text;
+}
+</script>
+
+<h1>性格診断</h1>
+
+<form id="Q">
+<p>人が泣いてるのを見ると(自分は悲しくないはずなのに)自分も涙が出てきそうになる<br>
+<input name="q1" type="radio" value="3"> 当てはまる
+<input name="q1" type="radio" value="2">少し当てはまる
+<input name="q1" type="radio" value="0"> どちらともいえない
+<input name="q1" type="radio" value="-2">あまり当てはまらない
+<input name="q1" type="radio" value="-3">当てはまらない
+</p>
+<p>難しい理論を学ぶこと(哲学や物理など)はどちらかと言えば好きな方だ。<br>
+    <input name="q2" type="radio" value="3"> 当てはまる
+    <input name="q2" type="radio" value="2">少し当てはまる
+    <input name="q2" type="radio" value="0"> どちらともいえない
+    <input name="q2" type="radio" value="-2">あまり当てはまらない
+    <input name="q2" type="radio" value="-3">当てはまらない
+</p>
+<p>よく自分のものをなくす。(どこにおいたか忘れる)<br>
+    <input name="q3" type="radio" value="3"> 当てはまる
+    <input name="q3" type="radio" value="2">少し当てはまる
+    <input name="q3" type="radio" value="0"> どちらともいえない
+    <input name="q3" type="radio" value="-2">あまり当てはまらない
+    <input name="q3" type="radio" value="-3">当てはまらない
+</p>
+<p>博物館等に行ったときは隅々まで見て回るというよりは人気そうなところを適当に見て帰るほうだ。<br>
+    <input name="q4" type="radio" value="3"> 当てはまる
+    <input name="q4" type="radio" value="2">少し当てはまる
+    <input name="q4" type="radio" value="0"> どちらともいえない
+    <input name="q4" type="radio" value="-2">あまり当てはまらない
+    <input name="q4" type="radio" value="-3">当てはまらない
+</p>
+</form>
+
+<button onclick="answer();">性格診断！</button>
+<div id="kotae">ボタンを押してください</div>
+</body>
+</html>
